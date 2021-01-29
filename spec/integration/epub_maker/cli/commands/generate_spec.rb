@@ -3,7 +3,7 @@
 require 'epub_maker/cli'
 require 'tty/prompt/test'
 
-RSpec.describe EPUBMaker::CLI::Commands::Generate::EPUB do
+RSpec.describe EPUBMaker::CLI::Commands::Generate do
   subject(:run) { command.call(path: path) }
 
   let(:command) { described_class.new }
