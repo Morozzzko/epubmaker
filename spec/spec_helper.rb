@@ -35,4 +35,10 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include(Module.new do
+    def fixture_path(path_relative_to_rspec_root)
+      File.join(__dir__, 'fixtures', path_relative_to_rspec_root)
+    end
+  end)
 end
