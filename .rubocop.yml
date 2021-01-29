@@ -13,3 +13,6 @@ Metrics/MethodLength:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
