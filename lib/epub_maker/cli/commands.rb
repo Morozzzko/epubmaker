@@ -2,8 +2,7 @@
 
 require 'epub_maker/cli/commands/version'
 require 'epub_maker/cli/commands/info'
-require 'epub_maker/cli/commands/generate/epub'
-require 'epub_maker/cli/commands/generate/directory'
+require 'epub_maker/cli/commands/generate'
 
 module EPUBMaker
   module CLI
@@ -14,10 +13,7 @@ module EPUBMaker
 
       register 'info', Info
 
-      register 'generate', aliases: %w[g] do |prefix|
-        prefix.register 'directory', Generate::Directory, aliases: %w[dir]
-        prefix.register 'archive', Generate::EPUB, aliases: %w[epub]
-      end
+      register 'generate', Generate, aliases: %w[g gen]
     end
   end
 end
