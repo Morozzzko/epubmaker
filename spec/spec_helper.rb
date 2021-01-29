@@ -5,6 +5,9 @@ require 'simplecov'
 
 SimpleCov.start do
   add_filter '/spec/'
+  add_group 'Executables', 'exe'
+  track_files 'lib/**/*.rb'
+  track_files 'exe/**/*.rb'
 end
 
 require 'epub_maker'

@@ -4,3 +4,12 @@ require: rubocop-rspec
 AllCops:
   NewCops: disable
   TargetRubyVersion: 2.7.0
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Enabled: false
