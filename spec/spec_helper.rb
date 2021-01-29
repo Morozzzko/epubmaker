@@ -11,6 +11,19 @@ SimpleCov.start do
 end
 
 require 'epub_maker'
+require 'dry/core/extensions'
+
+module Dry
+  class CLI
+    extend Dry::Core::Extensions
+
+    register_extension(:tty_prompt) do
+      require 'dry/cli/extensions/tty_prompt'
+    end
+
+    load_extensions(:tty_prompt)
+  end
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

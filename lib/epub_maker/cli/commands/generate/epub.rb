@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'epub_maker/cli/tty_tools'
 require 'gepub'
 
 module EPUBMaker
@@ -8,8 +7,6 @@ module EPUBMaker
     module Commands
       module Generate
         class EPUB < Dry::CLI::Command
-          include TTYTools
-
           argument :path, type: :string, required: true, desc: 'Full destination path for epub'
 
           def call(path:, **)
