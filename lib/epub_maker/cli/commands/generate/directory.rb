@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'dry/cli/utils/files'
-require 'epub_maker/cli/tty_tools'
 require 'gepub'
 
 module EPUBMaker
@@ -9,8 +8,6 @@ module EPUBMaker
     module Commands
       module Generate
         class Directory < Dry::CLI::Command
-          include TTYTools
-
           desc 'Generate a directory structure for future EPUB'
 
           argument :path, type: :string, required: true, desc: 'Directory path for epub. Will create if does not exist'

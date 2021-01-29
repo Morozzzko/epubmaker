@@ -3,5 +3,18 @@
 
 require 'bundler/setup'
 require 'epub_maker/cli'
+require 'dry/core/extensions'
+
+module Dry
+  class CLI
+    extend Dry::Core::Extensions
+
+    register_extension(:tty_prompt) do
+      require 'dry/cli/extensions/tty_prompt'
+    end
+
+    load_extensions(:tty_prompt)
+  end
+end
 
 Dry::CLI.new(EPUBMaker::CLI::Commands).call
